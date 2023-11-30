@@ -1,4 +1,4 @@
-import 'package:chat_app/authantication/login_auth.dart';
+import 'package:chat_app/models/authenticat/login_auth.dart';
 import 'package:chat_app/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -18,11 +18,11 @@ class _LoginViewState extends State<LoginView> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
+            const Text(
               "Login",
               style: TextStyle(fontSize: 45, fontWeight: FontWeight.bold),
             ),
-            Container(
+            SizedBox(
               width: 150,
               child: ElevatedButton(
                   onPressed: () async {
@@ -30,10 +30,10 @@ class _LoginViewState extends State<LoginView> {
                     setState(() {
                       authenticated = authenticat;
                       Navigator.pushReplacement(context,
-                          MaterialPageRoute(builder: (context) => HomeView()));
+                          MaterialPageRoute(builder: (context) => const HomeView()));
                     });
                   },
-                  child: Row(
+                  child: const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [Icon(Icons.fingerprint), Text("FingerPrint")],
                   )),

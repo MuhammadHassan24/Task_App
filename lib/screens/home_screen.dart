@@ -1,3 +1,4 @@
+import 'package:chat_app/screens/qrscan_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
@@ -7,12 +8,24 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Home Page"),
+        elevation: 2,
+        title: const Text(
+          "Home Page",
+          style: TextStyle(fontSize: 25, fontWeight: FontWeight.w400),
+        ),
         actions: [
-          Icon(Icons.scanner),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: IconButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const QRScanView()));
+                },
+                icon: const Icon(Icons.qr_code_scanner)),
+          ),
         ],
       ),
-      body: Center(child: Text("welcome")),
+      body: const Center(child: Text("welcome")),
     );
   }
 }

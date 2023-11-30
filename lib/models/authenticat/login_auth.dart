@@ -11,9 +11,9 @@ class Authantication {
       return await _auth.authenticate(
           localizedReason: "Scan Your FingerPrint To Login",
           options:
-              AuthenticationOptions(useErrorDialogs: true, stickyAuth: true));
+              const AuthenticationOptions(useErrorDialogs: true, stickyAuth: true));
     } catch (e) {
-      print("${e}");
+      print("$e");
       return false;
     }
   }

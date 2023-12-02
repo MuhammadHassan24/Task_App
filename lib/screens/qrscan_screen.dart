@@ -54,7 +54,12 @@ class _QRScanViewState extends State<QRScanView> {
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 10),
-            child: Icon(Icons.flash_auto),
+            child: InkWell(
+                onTap: () async {
+                  await controller!.toggleFlash();
+                  setState(() {});
+                },
+                child: Icon(Icons.flash_auto)),
           )
         ],
       ),

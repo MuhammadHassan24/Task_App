@@ -30,7 +30,7 @@ class _LoginViewState extends State<LoginView> {
                     setState(() {
                       authenticated = authenticat;
                       Navigator.pushReplacement(context,
-                          MaterialPageRoute(builder: (context) => const HomeView()));
+                          MaterialPageRoute(builder: (context) => HomeView()));
                     });
                   },
                   child: const Row(
